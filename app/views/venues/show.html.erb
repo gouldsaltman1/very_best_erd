@@ -15,7 +15,13 @@
       <dd><%= @venue.neighborhood %></dd>
 
       <dt>Bookmark</dt>
-      <dd><%= @venue.bookmark_id %></dd>
+      <dd>
+        <% if @venue.bookmark.present? %>
+          <a href="/bookmarks/<%= @venue.bookmark_id %>">
+            <%= @venue.bookmark.id %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 
